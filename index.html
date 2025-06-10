@@ -1,1 +1,402 @@
-CV TEST
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raphaël Gagnon Jomphe | CV</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #000;
+            background-color: #fafafa;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .header {
+            background-color: #003c69;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 5px solid rgba(0,0,0,0.1);
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 10px;
+            display: block;
+            object-fit: cover;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 5px;
+            position: relative;
+            z-index: 2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header h2 {
+            font-size: 1.1em;
+            font-weight: 400;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85em;
+            opacity: 0.9;
+        }
+
+        .contact-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 2px;
+            left: 0;
+            background: currentColor;
+            transition: width 0.3s ease;
+        }
+
+        a:hover {
+            color: #003c69;
+        }
+
+        a:hover::after {
+            width: 100%;
+        }
+
+        .contact-info a {
+            color: white;
+        }
+
+        .contact-info a:hover {
+            color: #a7d9ff;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section h3 {
+            font-size: 1.8em;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section h3::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 30px;
+            background-color: #003c69;
+            border-radius: 2px;
+        }
+
+        .experience-item {
+            margin-bottom: 35px;
+            padding: 25px;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid #003c69;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: #003c69;
+        }
+
+        .experience-period {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .experience-company {
+            font-size: 1.05em;
+            color: #003c69;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .experience-tasks {
+            color: #000;
+            line-height: 1.7;
+        }
+
+        .experience-tasks p {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .experience-tasks p::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #003c69;
+            font-weight: bold;
+        }
+        
+        .profile-content {
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                border-radius: 15px;
+            }
+
+            .header {
+                padding: 20px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header h2 {
+                font-size: 1em;
+            }
+
+            .contact-info {
+                gap: 10px;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-item {
+                font-size: 0.8em;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .section h3 {
+                font-size: 1.5em;
+            }
+
+            .profile-content {
+                padding: 20px;
+                font-size: 1em;
+            }
+
+            .experience-item {
+                padding: 20px;
+                margin-bottom: 25px;
+            }
+
+            .profile-img {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 1.6em;
+            }
+
+            .section h3 {
+                font-size: 1.3em;
+            }
+
+            .profile-content {
+                text-align: left;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container fade-in">
+        <header class="header">
+            <img src="PFP.png" alt="Raphaël Gagnon Jomphe" class="profile-img">
+            <h1>Raphaël Gagnon Jomphe</h1>
+            <h2>Analyste Technologique Sénior <br>Administrateur Systèmes</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M12,11.5A2.5,2.5 0 0,1 9.5,9A2.5,2.5 0 0,1 12,6.5A2.5,2.5 0 0,1 14.5,9A2.5,2.5 0 0,1 12,11.5M12,2A7,7 0 0,0 5,9C5,14.25 12,22 12,22C12,22 19,14.25 19,9A7,7 0 0,0 12,2Z"/>
+                    </svg>
+                    Québec, QC
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    <a href="https://www.linkedin.com/in/raphael-gagnon-jomphe-861808191?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    <svg class="contact-icon" viewBox="0 0 24 24">
+                        <path d="M20,8L12,13L4,8V6L12,11L20,6M20,4H4C2.89,4 2,4.89 2,6V18A2,2 0 0,0 4,20H20A2,2 0 0,0 22,18V6C22,4.89 21.1,4 20,4Z"/>
+                    </svg>
+                    <a href="mailto:raphaelgagnonjomphe@outlook.com">raphaelgagnonjomphe@outlook.com</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h3>Profil</h3>
+                <div class="experience-item">
+                    <div class="profile-content">
+                        <strong>Expérience en bref :</strong> PowerShell, Azure, Intune, Outils C#/.NET, Active Directory, GPO, MECM, Intelligence Artificielle, automatisation et plus.<br><br>
+
+                        Autodidacte passionné avec une solide expérience du domaine (actif depuis 2016), je possède une forte capacité d'adaptation et une grande rapidité d'apprentissage. J'ai un intérêt marqué pour l'automatisation des processus afin d'optimiser l'efficacité et la qualité des services.
+
+                        Polyvalent et agile, je m'intègre facilement à tout environnement technologique, qu'il soit familier ou entièrement nouveau. De plus, je suis parfaitement bilingue : le français est ma langue maternelle et l'anglais, ma langue seconde que je maîtrise couramment.
+
+                        Dans l'exercice de mes fonctions, je mets toujours au cœur de mon travail des valeurs essentielles telles que l'engagement, la réussite collective face aux défis, l'adaptabilité, la rigueur, le sens des responsabilités, ainsi que l'enthousiasme et la fierté du travail accompli. Réussir ensemble et faire preuve de créativité sont mes principales sources de motivation.
+
+                        Je possède un Diplôme d'Études Professionnelles en Soutien Informatique du CFPMR, une formation d'administrateur SCCM/MECM du Cégep de Sainte-Foy, ainsi qu'une solide expérience d'une dizaine d'années dans le domaine des TI.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3>Résumé des réalisations professionnelles</h3>
+
+                <div class="experience-item">
+                    <div class="experience-period">2025 à ce jour</div>
+                    <div class="experience-company">Technoconseil / MTMD (Ministère des Transports et de la Mobilité durable)</div>
+                    <div class="experience-tasks">
+                        <p>Administration et pilotage d'Active Directory</p>
+                        <p>Gestion des GPO et d'Intune</p>
+                        <p>Développement de scripts PowerShell complexes pour Azure, bases de données diverses, configurations et rapports</p>
+                        <p>Création d'outils à interface graphique en C#/.NET</p>
+                        <p>Automatisation de tâches techniques récurrentes</p>
+                        <p>Analyse technologique et gestion des demandes de service</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-period">2022 à 2025</div>
+                    <div class="experience-company">Levio / MELCCFP (Ministère de l'Environnement, de la Lutte contre les changements climatiques, de la Faune et des Parcs)</div>
+                    <div class="experience-tasks">
+                        <p>Troussage logiciel (Software Packaging)</p>
+                        <p>Développement de multiples scripts PowerShell</p>
+                        <p>Projet Azure (création d'images de VM, templates d'infrastructure, etc.)</p>
+                        <p>Intune - développement d'applications, scripts, profils de configuration, stratégies de conformité et remédiation</p>
+                        <p>Analyse technologique, formations et gestion des demandes de service</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-period">2017 à 2022</div>
+                    <div class="experience-company">Technoconseil / SAAQ (Société de l'assurance automobile du Québec)</div>
+                    <div class="experience-tasks">
+                        <p>Troussage logiciel (Software Packaging)</p>
+                        <p>Avis techniques et conception de solutions technologiques, gestion de licences</p>
+                        <p>Automatisation par scripts PowerShell</p>
+                        <p>Création d'outils à interface graphique Windows Forms</p>
+                        <p>Administration SCCM/MECM</p>
+                        <p>Gestion de diverses consoles d'administration (VMware, imprimantes, bases de données, etc.)</p>
+                        <p>Gestion et optimisation des GPO</p>
+                        <p>Certification du matériel et des logiciels, avec support niveau 3</p>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-period">2016 à 2017</div>
+                    <div class="experience-company">Technoconseil / CNESST (Commission des normes, de l'équité, de la santé et de la sécurité du travail)</div>
+                    <div class="experience-tasks">
+                        <p>Préparation et déploiement de postes physiques et virtuels contexte migration et désuétude</p>
+                        <p>Gestion d'inventaire informatique</p>
+                        <p>Configuration logicielle personnalisée pour postes utilisateurs</p>
+                        <p>Contrôle qualité des environnements déployés</p>
+                        <p>Support technique de niveau 2 et 1</p>
+                        <p>Gestion de projet pour le déploiement ciblé de postes spécifiques</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
